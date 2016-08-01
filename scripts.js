@@ -1,9 +1,21 @@
 
 var cards = [
-	'<img src="img/catViking.jpg">',
-	'<img src="http://place-hoff.com/300/350">',
-	'<img src="img/catViking.jpg">',
-	'<img src="http://place-hoff.com/300/350">'
+	'<img src="img/fruit1.png">',
+	'<img src="img/fruit1.png">',
+	'<img src="img/fruit2.png">',
+	'<img src="img/fruit2.png">',
+	'<img src="img/fruit3.png">',
+	'<img src="img/fruit3.png">',
+	'<img src="img/fruit4.jpeg">',
+	'<img src="img/fruit4.jpeg">',
+	'<img src="img/fruit5.jpeg">',
+	'<img src="img/fruit5.jpeg">',
+	'<img src="img/fruit6.jpeg">',
+	'<img src="img/fruit6.jpeg">',
+	'<img src="img/fruit9.png">',
+	'<img src="img/fruit9.png">',
+	'<img src="img/fruit8.png">',
+	'<img src="img/fruit8.png">'	
 ];
 
 $(document).ready(function(){
@@ -39,7 +51,7 @@ $(document).ready(function(){
 				if(cardsUp.find('img')[0].src == cardsUp.find('img')[1].src){
 					// the pictures are the same. this is a match!
 					console.log("two cards up!");
-					carsUp.addClass('matched');
+					cardsUp.addClass('matched');
 				}else{
 					// the user has flipped two cards, and they don't match.
 					setTimeout(function(){
@@ -52,3 +64,15 @@ $(document).ready(function(){
 	});
 
 });
+
+function shuffleDeck(){
+
+	for(var i=1; i<1000; i++){
+		card1 = Math.floor(Math.random() * cards.length);
+		card2 = Math.floor(Math.random() * cards.length);
+		var temp = cards[card1];
+		cards[card1] = cards[card2];
+		cards[card2] = temp;
+	}
+}
+
